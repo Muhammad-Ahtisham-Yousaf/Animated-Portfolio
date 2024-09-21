@@ -1,0 +1,461 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+ <!-- Main Content (Hidden Initialy)  -->
+ <div id="content" >
+  <!-- Your main website content goes here -->
+  <!-- <img id="background-img" src="https://images.unsplash.com/photo-1608501947097-86951ad73fea?q=80&w=2887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Background Image" /> -->
+ 
+ 
+   <section class="home" id="home">
+    <div class="home-content">
+      
+        <h1>Hi,It's <span>Muhammad Ahtisham</span></h1>
+          <h3 class="text-animation">
+            A <span>Python Developer</span>
+            <span>Frontend Developer</span>
+            <span>Backend Developer</span>
+            <span>Django Developer</span>
+          </h3>
+          <p>
+            I am an experienced front-end and back-end developer with a strong proficiency in Django and Python.
+            Over the years, I have successfully developed a range of projects, including a sophisticated eCommerce store,
+            a comprehensive job portal, and a personal portfolio. My work is characterized by a meticulous attention to detail,
+            unwavering focus, and a commitment to consistency and hard work.
+          </p>
+          
+          <ul class="socials">
+            <li class="icon-content">
+              <a href="https://www.linkedin.com/in/m-ahtisham-yousaf-108a91260/" aria-label="LinkedIn"data-social="linkedin">
+                <div class="filled"></div>
+                <i class="fa-brands fa-linkedin"></i>
+        
+              </a>
+              <!-- <div class="tooltip">LinkedIn</div> -->
+            </li>
+            <li class="icon-content">
+              <a href="https://github.com/Muhammad-Ahtisham-Yousaf" aria-label="GitHub" data-social="github">
+                <div class="filled"></div>
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <!-- <div class="tooltip">GitHub</div> -->
+            </li>
+        
+            <li class="icon-content">
+              <a href="https://www.facebook.com/sham.mayo.792/" aria-label="Facebook" data-social="facebook">
+                <div class="filled"></div>
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <!-- <div class="tooltip">Facebook</div> -->
+            </li>
+          </ul>
+  
+         <button class="btn" > <a href="#contact" >Hire
+              <i class="fa-solid fa-briefcase"></i>
+              </a>
+        </button>
+  
+      </div>
+        
+      <div class="home-img">
+        <img src="{% static 'images/ahtisham_collage.webp' %}" class="img" alt="Profile-Image">
+    </div>
+   </section>
+
+  <section class="services " id="services">
+    <h2 class="heading">Services</h2>
+      <div class="service-container">
+          <div class="services-box">
+            <i class="fa-solid fa-palette fa-spin icon"></i>
+              <h2>Frontend Developement</h2>
+              <p> I specialize in making websites look great and easy to use. 
+                 I focus on creating designs that are not only attractive but 
+                 also work smoothly on phones, tablets, and computers. <br>
+              <div class="strong-text">  Let's build a website that makes your business shine online!</div> 
+              </p>
+          </div>
+
+          <div class="services-box">
+            <i class="fa-solid fa-server fa-spin icon"></i>
+            <h2>
+              Backend Developement
+            </h2>
+            <p>
+              I specialize in backend development, where I create the engines that power websites and applications. 
+              From handling data securely to making sure everything runs smoothly behind the scenes. <br> 
+              <div class="strong-text">    Let's work together to build a strong foundation for your digital success! </div>
+            </p>
+        </div>
+
+        <div class="services-box">
+          <i class="fa-solid fa-code fa-spin"></i>
+          <h2>
+            Python Web Developement
+          </h2>
+          <p>
+            I specialize in creating custom web applications using Django. 
+            Whether you need a secure login system, a user-friendly interface, or powerful backend functionality. 
+             I'm here to bring your ideas to life with Django's versatility and reliability. <br> 
+             <div class="strong-text">   Let's collaborate and build something amazing together!</div>   
+          </p>
+      </div>
+      </div>
+  </section> 
+
+  <div id="animation">
+    <!-- <div class="scroll-img">
+      <img src="https://images.unsplash.com/photo-1678972726040-2f2cefc3cefa?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+    </div> -->
+    <h1 class="animation-content">
+      <span style ="color:rgb(117, 117, 117)">EXPERIENCES,</span>
+      <span style ="color:rgb(241, 239, 237)">FOCUS,</span>
+      <span style ="color:rgb(14, 13, 13)">ATTENTION TO DETAIL,</span>
+      <span style ="color:rgb(40, 157, 236)">CONSISTENCY,</span>
+      <span style ="color:rgb(1, 110, 153)">HARD WORK,</span>
+      <span style ="color:rgb(13, 29, 122)">TIME MANAGEMENT,</span>
+      <span style ="color:rgb(150, 22, 150)">MOTIVATION </span>
+      <span style ="color:rgb(248, 156, 50)"> AND</span>
+      <span style ="color:rgb(221, 90, 247)"> DISCIPLINE.</span>
+
+    </h1>
+  </div>
+
+   <!-- work page -->
+   <section id="work" class="dt-milagros">
+    <h1 class="heading">Work</h1>
+    <div class="title">
+        <img src="{% static 'images/project/portfolio-project.jpg' %}" alt="Portfolio" class="work-images">
+       <div class="projectdesc">
+        <h1>Portfolio</h1>
+       <h3>2024</h3>
+        
+      </div>
+      <p>Created a personal portfolio using Django and Python. It showcases my projects, skills,
+        and experience with an easy-to-navigate design and secure contact form.
+     </p> 
+    </div>
+    <div class="title">
+        <img src="{% static 'images/project/ecommerce-store.jpg' %}" alt="Ecommerce Store" class="workimages">
+       <div class="projectdesc">
+        <h1>eCommerce store</h1>
+       <h3>2024</h3>
+      </div>
+       <p>Built an eCommerce store with Django and Python. 
+        It includes secure logins, product listings,a shopping cart,order management,and an easy-to-use admin dashboard.</p>
+      
+    </div>
+    <div class="title border-last">
+        <img src="{% static 'images/project/job-portal.jpg' %}" alt="Job Portal" class="work-images">
+      <div class="projectdesc"> 
+       <h1>job portal</h1>
+       <h3>2023</h3>
+      </div>
+         <p>
+          Developed a user-friendly JobPortal using Django and Python,
+          featuring secure user authentication, advanced job search, profile management, and an admin dashboard for efficient site management.
+       </p>
+    </div>
+   </section>
+   
+  
+   <section class="timeline-section " id="education" >
+    <h2 class="heading">Education</h2>
+    <div class="timeline-items">
+      <div class="timeline-item"> 
+        <div class="timeline-dot"><i class="fa-solid fa-certificate fa-spin"></i></div>
+        <div class="timeline-date">2010-2015</div>
+        <div class="timeline-content">
+          <h3>Middle School</h3>
+          <p>I attended Government High School, 
+            where I consistently achieved first position from first to fifth grade.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"><i class="fa-solid fa-certificate fa-spin"></i></div>
+        <div class="timeline-date">2015-2020</div>
+        <div class="timeline-content">
+          <h3>Metriculation </h3>
+          <p>From 2015 to 2020, I attended <a href="https://www.facebook.com/sgschools.edu.pk/"> Suffah Grammar Schools</a> 
+           . I achieved 1074 out of 1100 marks and won a bicycle from my school for my performance.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"><i class="fa-solid fa-certificate fa-spin"></i></div>
+        <div class="timeline-date">2020-2022</div>
+        <div class="timeline-content">
+          <h3>Intermediate</h3>
+          <p>
+            I completed my Intermediate studies at <a href="https://www.facebook.com/PGCWorld/"> Punjab Collage Campus 8-C Canal Road</a>
+             about 25 km from my home. The long daily travel was tough, but it taught me to stay dedicated and persistent.
+          </p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"><i class="fa-solid fa-certificate fa-spin"></i></div>
+        <div class="timeline-date">2023-2024</div>
+        <div class="timeline-content">
+          <h3>Python Programming Course</h3>
+          <p>
+            I earned a diploma in Python Web Development from<span><a href="https://www.azadchaiwala.com/"> Azad Chaiwala Institute</a></span> after fulfilling all the requirements.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"><i class="fa-solid fa-certificate fa-spin"></i></div>
+        <div class="timeline-date">2024</div>
+        <div class="timeline-content">
+          <h3>Projects</h3>
+          <p>I have successfully developed a range of projects, including a sophisticated eCommerce store,
+            a comprehensive job portal, and a personal portfolio.</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+   <div id="certificate" class="certificate-section">
+    <h2 class="heading">Certificate</h2>
+    <div>
+      <img class="img" src="{% static 'images/certificate.png' %}" alt="Certificate">
+    </div>
+   </div>
+
+  {% comment %} my mentors {% endcomment %}
+
+  <div class="mentors section"  id= "mentors">
+    <h2 class="heading">Mentors</h2>
+ <div class="ment-container">
+
+    <div class="card">
+      <div class="card-info">
+            <div class="card-avatar">  </div>
+          
+          <div class="card-title">Zeeshan Usmain</div>
+          <div class="card-subtitle">Data Scientist, Scholar &amp; Writer  </div>
+        </div>
+          <ul class="card-social">
+            <li class="card-social__item">
+            <a href="https://www.facebook.com/zusmani78" aria-label="Visit Usmani's Facebook Profile">  <i class="fa-brands fa-facebook-f"></i></a>
+          </li>
+          <li class="card-social__item"> 
+          <a href="https://www.youtube.com/@zusmani78"> <i class="fa-brands fa-youtube"></i></a>
+            </li>
+          <li class="card-social__item">
+            <a href="https://www.linkedin.com/in/zusmani">  <i class="fa-brands fa-linkedin-in"></i></a>
+          </li>
+          </ul>
+    
+    </div>
+<!-- 2 -->
+<div class="card">
+  <div class="card-info">
+    <div class="card-avatar"></div>
+    <div class="card-title">Irfan Malik</div>
+    <p class="card-subtitle">Data Scientist &amp; <a href="https://www.xevensolutions.com/">Founder of Xeven Solutions </a></p>
+  </div>
+  <ul class="card-social">
+    <li class="card-social__item">
+      <a href="http://www.facebook.com/iamirfansaeedmalik"><i class="fa-brands fa-facebook-f"></i></a>
+   </li>
+   <li class="card-social__item"> 
+   <a href="https://www.youtube.com/@muhammadirfanmalik"> <i class="fa-brands fa-youtube"></i></a>
+    </li>
+  <li class="card-social__item">
+    <a href="https://www.linkedin.com/in/muhammadirfanmalik"> <i class="fa-brands fa-linkedin-in"></i></a>
+  </li>
+  </ul>
+</div>
+
+<!-- 3 -->
+<div class="card">
+  <div class="card-info">
+  <div class="card-avatar"></div>
+  <div class="card-title">Mufti Tariq Masood</div>
+  <div class="card-subtitle">An Islamic Scholar</div>
+  </div>
+  <ul class="card-social">
+    <li class="card-social__item">
+      <a href="https://www.facebook.com/asktariqmasood"> <i class="fa-brands fa-facebook-f"></i></a>
+   </li>
+   <li class="card-social__item"> 
+   <a href="https://www.youtube.com/@MuftiTariqMasoodSpeeches"> <i class="fa-brands fa-youtube"></i></a>
+    </li>
+  <li class="card-social__item">
+    <a href="https://www.instagram.com/mufti_tariq_masood">  <i class="fa-brands fa-instagram"></i></a>
+  </li>
+  </ul>
+</div>
+
+<!-- 4 -->
+<div class="card">
+  <div class="card-info">
+  <div class="card-avatar"></div>
+  <div class="card-title">Azad Chaiwala</div>
+  <div class="card-subtitle">British-Pakistani Entrepreneur &amp; YouTuber</div>
+  </div>
+  <ul class="card-social">
+  <li class="card-social__item">
+    <a href="https://www.facebook.com/AzadChaiwala"> <i class="fa-brands fa-facebook-f"></i></a>
+ </li>
+ <li class="card-social__item"> 
+ <a href="https://www.youtube.com/@AzadChaiwala"> <i class="fa-brands fa-youtube"></i></a>
+  </li>
+<li class="card-social__item">
+  <a href="https://www.linkedin.com/in/azad-chaiwala"> <i class="fa-brands fa-linkedin-in"></i></a>
+</li>
+</ul>
+</div>
+
+</div>
+</div>
+<section id="contact" class="contact">
+    <h2 class="heading">Contact</h2>
+    <form action="#" method ="POST">
+      {% csrf_token %}
+      <div class="input-box">
+       
+        {{client.full_name}}
+        {{client.email}}
+      </div>
+      <div class="input-box">
+        {{client.phone}}
+        {{client.subject}}
+      </div>
+      {{client.message}}
+       
+      <button  class="btn"> Send Request  <i class="fa-solid fa-arrow-right-long"></i> </button>
+    </form>
+  </section>
+  <div id="string">
+    <svg viewBox="0 0 1100 300" preserveAspectRatio="xMidYMid meet">
+      <path d="M 10 150 Q 150 150 1100 150" stroke="white" fill="transparent"/>
+    </svg>
+  </div>
+  <section id="arrow-animation">
+    <div class="move">
+    <div class="marque">
+      <h1>Frontend Developer</h1>
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 129.9 108.5" style="enable-background:new 0 0 129.9 108.5;" xml:space="preserve">
+      <g><path class="st0" d="M66.8,2c3.9,0,7.8,0,11.7,0.1C78,22.6,93.3,42,113.2,46.6c3.7,1.2,7.7,1,11.6,1.4c0,3.9,0,7.8,0,11.6   c-7.5,0.4-15.1,1.5-21.7,5.3c-14.8,7.8-24.7,23.9-24.7,40.7c-3.9,0-7.8,0-11.6,0c-0.1-17.9,8.7-35.5,23.2-46.1   c-28.8,0.1-57.7,0-86.5,0c0.1-3.8,0.1-7.7,0-11.6C32.2,48.2,61,48,89.8,48.1c-10.1-8-18.2-18.9-21.2-31.5   C67.4,11.9,66.9,6.9,66.8,2z"></path></g>
+      </svg>
+    </div>
+    <div class="marque">
+      <h1>Backend Developer</h1>
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 129.9 108.5" style="enable-background:new 0 0 129.9 108.5;" xml:space="preserve">
+      <g><path class="st0" d="M66.8,2c3.9,0,7.8,0,11.7,0.1C78,22.6,93.3,42,113.2,46.6c3.7,1.2,7.7,1,11.6,1.4c0,3.9,0,7.8,0,11.6   c-7.5,0.4-15.1,1.5-21.7,5.3c-14.8,7.8-24.7,23.9-24.7,40.7c-3.9,0-7.8,0-11.6,0c-0.1-17.9,8.7-35.5,23.2-46.1   c-28.8,0.1-57.7,0-86.5,0c0.1-3.8,0.1-7.7,0-11.6C32.2,48.2,61,48,89.8,48.1c-10.1-8-18.2-18.9-21.2-31.5   C67.4,11.9,66.9,6.9,66.8,2z"></path></g>
+      </svg>
+    </div>
+    <div class="marque">
+      <h1>Modern Web Developer</h1>
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 129.9 108.5" style="enable-background:new 0 0 129.9 108.5;" xml:space="preserve">
+      <g><path class="st0" d="M66.8,2c3.9,0,7.8,0,11.7,0.1C78,22.6,93.3,42,113.2,46.6c3.7,1.2,7.7,1,11.6,1.4c0,3.9,0,7.8,0,11.6   c-7.5,0.4-15.1,1.5-21.7,5.3c-14.8,7.8-24.7,23.9-24.7,40.7c-3.9,0-7.8,0-11.6,0c-0.1-17.9,8.7-35.5,23.2-46.1   c-28.8,0.1-57.7,0-86.5,0c0.1-3.8,0.1-7.7,0-11.6C32.2,48.2,61,48,89.8,48.1c-10.1-8-18.2-18.9-21.2-31.5   C67.4,11.9,66.9,6.9,66.8,2z"></path></g>
+      </svg>
+    </div>
+    <div class="marque">
+      <h1>Python Web Developer</h1>
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 129.9 108.5" style="enable-background:new 0 0 129.9 108.5;" xml:space="preserve">
+      <g><path class="st0" d="M66.8,2c3.9,0,7.8,0,11.7,0.1C78,22.6,93.3,42,113.2,46.6c3.7,1.2,7.7,1,11.6,1.4c0,3.9,0,7.8,0,11.6   c-7.5,0.4-15.1,1.5-21.7,5.3c-14.8,7.8-24.7,23.9-24.7,40.7c-3.9,0-7.8,0-11.6,0c-0.1-17.9,8.7-35.5,23.2-46.1   c-28.8,0.1-57.7,0-86.5,0c0.1-3.8,0.1-7.7,0-11.6C32.2,48.2,61,48,89.8,48.1c-10.1-8-18.2-18.9-21.2-31.5   C67.4,11.9,66.9,6.9,66.8,2z"></path></g>
+      </svg>
+    </div>
+    <div class="marque">
+      <h1>Frontend Developer</h1>
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 129.9 108.5" style="enable-background:new 0 0 129.9 108.5;" xml:space="preserve">
+      <g><path class="st0" d="M66.8,2c3.9,0,7.8,0,11.7,0.1C78,22.6,93.3,42,113.2,46.6c3.7,1.2,7.7,1,11.6,1.4c0,3.9,0,7.8,0,11.6   c-7.5,0.4-15.1,1.5-21.7,5.3c-14.8,7.8-24.7,23.9-24.7,40.7c-3.9,0-7.8,0-11.6,0c-0.1-17.9,8.7-35.5,23.2-46.1   c-28.8,0.1-57.7,0-86.5,0c0.1-3.8,0.1-7.7,0-11.6C32.2,48.2,61,48,89.8,48.1c-10.1-8-18.2-18.9-21.2-31.5   C67.4,11.9,66.9,6.9,66.8,2z"></path></g>
+      </svg>
+    </div>
+    <div class="marque">
+      <h1>Backend Developer</h1>
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 129.9 108.5" style="enable-background:new 0 0 129.9 108.5;" xml:space="preserve">
+      <g><path class="st0" d="M66.8,2c3.9,0,7.8,0,11.7,0.1C78,22.6,93.3,42,113.2,46.6c3.7,1.2,7.7,1,11.6,1.4c0,3.9,0,7.8,0,11.6   c-7.5,0.4-15.1,1.5-21.7,5.3c-14.8,7.8-24.7,23.9-24.7,40.7c-3.9,0-7.8,0-11.6,0c-0.1-17.9,8.7-35.5,23.2-46.1   c-28.8,0.1-57.7,0-86.5,0c0.1-3.8,0.1-7.7,0-11.6C32.2,48.2,61,48,89.8,48.1c-10.1-8-18.2-18.9-21.2-31.5   C67.4,11.9,66.9,6.9,66.8,2z"></path></g>
+      </svg>
+    </div>
+    <div class="marque">
+      <h1>Modern Web Developer</h1>
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 129.9 108.5" style="enable-background:new 0 0 129.9 108.5;" xml:space="preserve">
+      <g><path class="st0" d="M66.8,2c3.9,0,7.8,0,11.7,0.1C78,22.6,93.3,42,113.2,46.6c3.7,1.2,7.7,1,11.6,1.4c0,3.9,0,7.8,0,11.6   c-7.5,0.4-15.1,1.5-21.7,5.3c-14.8,7.8-24.7,23.9-24.7,40.7c-3.9,0-7.8,0-11.6,0c-0.1-17.9,8.7-35.5,23.2-46.1   c-28.8,0.1-57.7,0-86.5,0c0.1-3.8,0.1-7.7,0-11.6C32.2,48.2,61,48,89.8,48.1c-10.1-8-18.2-18.9-21.2-31.5   C67.4,11.9,66.9,6.9,66.8,2z"></path></g>
+      </svg>
+    </div>
+    <div class="marque">
+      <h1>Python Web Developer</h1>
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 129.9 108.5" style="enable-background:new 0 0 129.9 108.5;" xml:space="preserve">
+      <g><path class="st0" d="M66.8,2c3.9,0,7.8,0,11.7,0.1C78,22.6,93.3,42,113.2,46.6c3.7,1.2,7.7,1,11.6,1.4c0,3.9,0,7.8,0,11.6   c-7.5,0.4-15.1,1.5-21.7,5.3c-14.8,7.8-24.7,23.9-24.7,40.7c-3.9,0-7.8,0-11.6,0c-0.1-17.9,8.7-35.5,23.2-46.1   c-28.8,0.1-57.7,0-86.5,0c0.1-3.8,0.1-7.7,0-11.6C32.2,48.2,61,48,89.8,48.1c-10.1-8-18.2-18.9-21.2-31.5   C67.4,11.9,66.9,6.9,66.8,2z"></path></g>
+      </svg>
+    </div>
+ 
+  </div>
+      
+  </section>
+  <footer class="footer">
+
+    <ul class="socials">
+      <li class="icon-content">
+        <a href="https://www.linkedin.com/in/m-ahtisham-yousaf-108a91260/" aria-label="LinkedIn"data-social="linkedin">
+          <div class="filled"></div>
+          <i class="fa-brands fa-linkedin"></i>
+  
+        </a>
+      </li>
+      <li class="icon-content">
+        <a href="https://github.com/Muhammad-Ahtisham-Yousaf" aria-label="GitHub" data-social="github">
+          <div class="filled"></div>
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </li>
+      <li class="icon-content">
+        <a href="https://www.facebook.com/sham.mayo.792/" aria-label="Facebook" data-social="facebook">
+          <div class="filled"></div>
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+      </li>
+    </ul>
+    <div class="back">
+      <a href="#"  onclick="lenis.scrollTo('#')">
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 129.9 108.5" style="enable-background:new 0 0 129.9 108.5;" xml:space="preserve">
+      <g><path class="st0" d="M66.8,2c3.9,0,7.8,0,11.7,0.1C78,22.6,93.3,42,113.2,46.6c3.7,1.2,7.7,1,11.6,1.4c0,3.9,0,7.8,0,11.6   c-7.5,0.4-15.1,1.5-21.7,5.3c-14.8,7.8-24.7,23.9-24.7,40.7c-3.9,0-7.8,0-11.6,0c-0.1-17.9,8.7-35.5,23.2-46.1   c-28.8,0.1-57.7,0-86.5,0c0.1-3.8,0.1-7.7,0-11.6C32.2,48.2,61,48,89.8,48.1c-10.1-8-18.2-18.9-21.2-31.5   C67.4,11.9,66.9,6.9,66.8,2z"></path></g>
+      </svg>
+    </a>
+    </div>
+    <ul class="list">
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">About Me</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Privacy and Policy</a></li>
+    </ul>
+    <p class="copywright">
+      &#169; 2024 Designed with <i class="fa-solid fa-heart heart"></i> by Ahtisham Yousaf
+    </p>
+  </footer>
+<!--  content div -->
+ <a href="https://wa.me/923147358828" class="whatsapp_float"><i class="fa-brands fa-whatsapp whatsapp-icon"></i></a>
+
+
+<!-- position: fixed elements can go outside -->
+ </div>
+ {% endblock  %}
+
+
+ </script>    
+  </body>
+</html>
+
+ 
+  
+

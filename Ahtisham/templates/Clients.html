@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block 'title' %}  Clients Dashboard {% endblock  %}
+{% block 'style' %}  
+<link rel="stylesheet" href="{% static 'css/businiss.css' %}">
+   {% endblock  %}
+
+   {% block 'content' %} 
+     <h2 class="heading"> Clients Details</h2>
+    <table >
+        <colgroup>
+            <col style="background-color: rgb(67, 50, 223); color:white;">
+            <col style="background-color: blueviolet;">
+            <col style="background-color: rgb(90, 223, 167);">
+            <col style="background-color: rgb(197, 238, 101);">
+            <col style="background-color: rgb(3, 110, 110);">
+            <col style="background-color: rgb(22, 150, 236);">
+        </colgroup>
+         <thead>
+        <tr align="center">
+            <th class="">NO</th>
+            <th  class="col">Full Name</th>
+            <th class="col">Email</th>
+            <th class="col">Phone</th>
+            <th class="col">Subject</th>
+            <th class="col">Message</th>
+        </tr>
+        </thead>
+        <tbody>
+          {% for client in clients_details %}
+
+                <tr align="center">
+                    <th> {{ client.id}} </th>
+                   <th > {{ client.full_name }} </th>
+                    <td>{{ client.email }}</td>
+                    <td>{{ client.phone }}</td>
+                    <td>{{ client.subject }}</td>
+                    <td>{{ client.message }}</td>
+                  
+                </tr> 
+            {% endfor %} 
+        </tbody>
+    </table>
+{% endblock  %} 

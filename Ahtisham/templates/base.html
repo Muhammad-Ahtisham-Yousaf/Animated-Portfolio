@@ -1,0 +1,695 @@
+{% load static %}
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+        <title> Ahtisham Yousaf  </title>
+        <link rel="stylesheet" href="{% static 'css/businiss.css' %}">
+
+        <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
+
+
+        <!-- <link rel="stylesheet" href="https://unpkg.com/sheryjs@1.0.0-beta.0.1.8/dist/Shery.css"/>  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <!-- Link to favicon -->
+        <link rel="icon" type="image/png" sizes="48x48" href="{% static 'images/ahtisham_collage.webp' %}">
+        <!-- <link rel="stylesheet" href="{% static 'css/locomotive.css' %}"> -->
+        <link rel="stylesheet" href="{% static 'css/Shery.css' %}">
+
+
+    </head>
+    <body>
+      <div id="preloader">
+        <h1 id="preloader-heading">Ahtisham Yousaf</h1>
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+        <div id="progress-count">0%</div>
+      </div> 
+  {% include "_navbar.html" %}
+
+        {% block content %}
+
+
+       {% endblock %}
+
+    
+    <!-- Scripts -->
+   
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <script  type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script> 
+    <!-- <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script> -->
+<!-- <script src="{% static 'js/scripts.js' %}"></script> -->
+<script>
+//scroll to 400 pixels down from the top
+// Initialize Lenis smooth scrolling
+// Ensure Lenis smooth scroll is properly initialized
+const lenis = new Lenis({
+  duration: 1.5, // Adjust to control smoothness
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  smooth: true,
+  direction: 'vertical',
+  autoResize:true,
+  // infinite:true
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+  // Sync ScrollTrigger with Lenis smooth scrolling
+lenis.on('scroll', ScrollTrigger.update);
+ gsap.ticker.add((time)=>{
+  lenis.raf(time * 1000)
+})
+
+gsap.ticker.lagSmoothing(0)
+
+  // Refresh ScrollTrigger on window resize
+window.addEventListener('resize', () => {
+  ScrollTrigger.refresh();
+});
+
+
+
+
+function showSidebar() {
+    const sidebar = document.querySelector('.navbar');
+    if (sidebar) {
+        sidebar.style.display = 'flex';
+      
+    } else {
+        console.error('Element with class "navbar" not found.');
+    }
+}
+console.log("navbar");
+function hideSidebar() {
+    const sidebar = document.querySelector('.navbar');
+    if (sidebar) {
+        sidebar.style.display = 'none';
+    } else {
+        console.error('Element with class "navbar" not found.');
+    }
+}
+
+    let sections = document.querySelectorAll('section');
+    let navLinks = document.querySelectorAll('nav ul li a');
+
+    // Function to handle scroll and apply the active class
+    function handleScroll() {
+        let top = window.scrollY;
+
+        sections.forEach(sec => {
+            let offset = sec.offsetTop - 100;  // Adjust for header height if needed
+            let height = sec.offsetHeight;
+            let id = sec.getAttribute('id');
+
+            if (top >= offset && top < offset + height) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    let targetLink = document.querySelector(`nav ul li a[href*="${id}"]`);
+                    if (targetLink) {
+                        targetLink.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Apply active class on link click
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navLinks.forEach(navLink => navLink.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+      
+
+// // Select the body element
+// const body = document.querySelector("body");
+
+// // Get the computed background image URL from the body
+// const bgImageUrl = window.getComputedStyle(body).getPropertyValue('background-image');
+// console.log(bgImageUrl);
+
+// // Ensure the background image URL is extracted correctly (remove 'url("' and '")')
+// const imageUrl = bgImageUrl.slice(5, -2);
+
+// // Remove the current background image from the body
+// body.style.backgroundImage = "none";
+
+// // Create an image element
+// const img = new Image();
+
+// // Set the src of the image to the extracted URL
+// img.src = imageUrl;
+
+// // Add a class to the img element (this class will allow us to style the image)
+// img.classList.add("background-img-class");
+
+// // Append the img to the body
+// document.body.appendChild(img);
+
+// // Log the image element to verify the class has been added
+// console.log(img);
+
+Shery.imageEffect(".img",{
+  style:3,
+  // debug:true,
+})
+// document.addEventListener("wheel",(detals)=>{
+
+// })
+
+
+
+  
+
+
+
+var header = document.querySelector('header');
+window.addEventListener("scroll",() =>{
+  header.classList.toggle("sticky" , window.scrollY > 0)
+  })
+// scroll.update(); // Reinitialize Locomotive Scroll if necessary
+
+// document.documentElement.style.overflow = 'hidden';
+function LoaderAndFirstPageAnimation() {
+  
+  window.onload = function () {
+  
+
+  const progressBar = document.getElementById('progress-bar');
+  const progressCount = document.getElementById('progress-count');
+  const content = document.getElementById('content');
+  var header = document.querySelector('header');
+  let count = 0;
+  var preloader = document.getElementById('preloader')
+  // Check if the necessary elements exist
+  if (!progressBar || !progressCount) {
+    console.error('Required elements are missing from the DOM.');
+    return;
+  }
+
+  // Calculate total loading time based on actual resource loading
+  const totalLoadingTime = performance.now() / 1000; // Time in seconds
+
+   
+  // Create a GSAP timeline for the progress bar and progress count
+  const timeline = gsap.timeline({
+    onUpdate: function () {
+      // Update the progress count text
+      const progress = Math.floor(timeline.progress() * 100);
+      
+      if (progress <= 100) {
+        progressCount.innerText = `${progress}%`;
+      }
+    },
+    
+    onComplete: function () {
+      // Hide the preloader and show the content
+      
+      preloader.style.display = 'none';
+      content.style.opacity = 1; // Show the main content after preloading
+      // Show content with a smooth transition
+      // document.documentElement.style.overflow = 'visible';
+      content.style.visibility = 'visible';
+      content.style.position = 'static';
+      // document.body.style.overflowY = "scroll"; // Enable scrolling
+      // Animate the header and content after the preloader is gone
+      const tl2 = gsap.timeline();
+    //  tl2.from(content,{
+    //   y:1000,
+    //   opacity:0,
+    //   duration:1.4,
+    //   ease:"power4.in"
+    //  })
+      tl2.from(header, {
+        y:-50,
+        opacity:0,
+        duration:1,
+        ease:Expo.easeInOut,
+      })
+      
+    //   const logoText = document.querySelector(".logo")
+    //   const splitedLogo = logoText.textContent.split("")
+    //  ;
+    //   logoText.innerHTML = "";
+    //   splitedLogo.forEach((letter) =>{
+    //     const div = document.createElement("div")
+    //     div.style.display = "inline-block"
+    //     div.textContent = letter
+       
+    //     logoText.appendChild(div)
+    //   })
+
+      // Animate the logo
+      gsap.from(".logo", {
+        y: -30,
+        opacity: 0,
+        duration: 1,
+        ease: "elastic.out",
+        stagger:0.2,
+      }, "-=1"); // Start this animation 1 second before the previous one ends
+
+      // Animate the navbar items
+      gsap.from(".navbar ul li", {
+        y: -50,
+        duration:1.2,
+        opacity: 0,
+        ease: "elastic.out",
+        stagger: 0.2,
+      }, "-=0.4");
+
+      // Animate the home-content text and buttons
+      tl2.from(".home-content h1, .text-animation, .home-content p", {
+        x: -500,
+        stagger: 0.4,
+        opacity: 0,
+        ease: "elastic.inOut",
+        duration: 2,
+      }, "-=0.5");
+      gsap.from(".home-img .img", {
+        
+        z:200,
+        opacity: 0,
+        ease: "power4.out",
+        duration: 2,
+      }, "-=0.8");
+
+      tl2.from(".home-content button,.socials", {
+        x: -500,
+        opacity: 0,
+        stagger:0.2,
+        ease: "elastic.inOut",
+        duration: 2,
+      }, "-=1");
+    },
+  });
+  // Animate the progress bar to fill up according to the actual loading time
+  timeline.to(progressBar, {
+    width: '100%',
+    duration: totalLoadingTime, // Use the calculated loading time
+    ease: 'power4.out',
+  });
+ 
+};
+
+  // GSAP Timeline for Text Animation with Spans
+  var spans = document.querySelectorAll(".text-animation span");
+  var tl = gsap.timeline({repeat: -1, repeatDelay: 0.5}); // Loop infinitely with a short delay between loops
+
+  spans.forEach((span, index) => {
+    tl.fromTo(span, 
+      { y: 100, opacity: 0, display: 'none' }, // Start state
+      { 
+        y: 0, 
+        opacity: 1, 
+        duration: 0.5, 
+        ease: "elastic.out", 
+        display: 'inline-block',
+        onStart: function() { 
+          span.style.display = 'inline-block'; // Ensure the span is displayed when animation starts
+        }
+      })
+      .to(span, 
+        { 
+          y: -100, 
+          opacity: 0, 
+          duration: 0.5, 
+          ease: "elastic.in", 
+          delay: 2, // Visible for 2 seconds before disappearing
+          onComplete: function() {
+            span.style.display = 'none'; // Hide the span after animation ends
+          }
+        });
+  });
+}
+  
+
+LoaderAndFirstPageAnimation()
+
+// Second Page Animation with Debugging
+function SecondPageAnimation() {
+  if(window.innerWidth >= 600){
+  // Animate the section heading first
+  gsap.from("#services .heading", {
+  y: 50,
+  opacity: 0,
+  duration: 0.8,
+  ease: "power4.out",
+  scrollTrigger: {
+    trigger: "#services",
+    scroller: "body", // Ensure this is the correct scroller
+    // markers: true, // Enable markers for debugging
+    start: "top 170%", // Start animation when the top of #services reaches 90% of the viewport height
+    end: "top 60%", // When to stop the animation (can adjust if needed)
+    scrub: 0.6, // Smooth animation based on scroll,
+    
+  }
+ });
+
+
+  // Animate each .services-box independently
+  document.querySelectorAll('.services-box').forEach((box, index) => {
+    // Animate h2 in each services-box
+    gsap.from(box.querySelectorAll('h2'), {
+      x: 80,
+      opacity: 0,
+      duration: 1.5,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: box,
+        scroller: "body", // Ensure this is the correct scroller
+        // Enable markers for debugging
+        start: "top 165%", // Adjust start position as needed
+        end: "top center",
+        scrub: 0.3
+      }
+    });
+
+    // Animate p and strong-text in each services-box
+    gsap.from(box.querySelectorAll('p, .strong-text'), {
+      y: 80,
+      x:-90,
+      opacity: 0,
+      duration: 1,
+      ease: "power4.out",
+      stagger: 0.1, // Adds a delay between animations
+      scrollTrigger: {
+        trigger: box,
+        scroller: "body", // Ensure this is the correct scroller
+        // markers: true, // Enable markers for debugging
+        start: "top 156%", // Adjust start position as needed
+        end: "top center",
+        scrub: 0.2
+      }
+    });
+  });
+ }
+}
+
+// Call the second page animation
+SecondPageAnimation();
+
+ScrollTrigger.refresh();
+function education() {
+  // Animate the section heading first, similar to the #services section
+  gsap.from("#education .heading", {
+    y: 50,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power4.out", 
+    scrollTrigger: {
+      trigger: "#education",
+      scroller: "body",
+      start: "top 170%", // Adjust this based on the pinned section's influence
+      end: "top 60%",
+      scrub: 0.6,
+      marker:true,
+    }
+  });
+
+  // Animate odd timeline items (from the left)
+  document.querySelectorAll('.timeline-item:nth-child(odd)').forEach(item => {
+    gsap.from(item, {
+      x: -500,   
+      opacity: 0,
+      duration: 1.5,
+      stagger: 0.6, 
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: item,  
+        scroller: "body",
+        start: "top 170%", 
+        end: "top center",
+        scrub: 0.4,
+      }
+    });
+  });
+
+  // Animate even timeline items (from the right)
+  document.querySelectorAll('.timeline-item:nth-child(even)').forEach(item => {
+    gsap.from(item, {
+      x: 500,   
+      opacity: 0,
+      duration: 1.5,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: item, 
+        scroller: "body",
+        start: "top 170%", 
+        end: "top center",
+        scrub: 0.4,
+      }
+    });
+  });
+}
+education();
+
+function move() {
+  window.addEventListener("wheel", function (details)  {
+  if (details.deltaY > 0) {
+    
+    // console.log(details);
+    gsap.to(".marque",{
+    // transform:'translateX(-200%)',
+    x:-1500,
+    duration:13,
+    ease:"none",
+    repeat:-1,
+   }) 
+   gsap.to(".move svg",{
+    rotate:180,
+   }) 
+  }
+  else{
+    gsap.to(".marque",{
+    x:10,
+    duration:10,
+    ease:"none",
+    repeat:-1,
+   }) 
+   gsap.to(".move svg", {
+    rotate:0,
+   })
+  }
+})
+}
+move()
+
+
+function work() {
+  // Select images within the work section
+// const workImages = document.querySelectorAll("#work img");
+// var mouseFollower = document.querySelector(".mousefollower")
+// workImages.forEach((img) => {
+//     img.addEventListener("mouseover", () => {
+//         mouseFollower.innerHTML = "View";
+//         gsap.to(mouseFollower, {
+//             scale: 3,
+//             duration: 0.5,
+//             ease: "power4.out"
+//         });
+//     });
+
+//     img.addEventListener("mouseout", () => {
+//         mouseFollower.innerHTML = "";
+//         gsap.to(mouseFollower, {
+//             scale: 1,
+//             duration: 0.5,
+//             ease: "power4.out"
+//         });
+//     });
+// });
+
+
+ document.querySelectorAll('.title').forEach(function (title) {
+    title.addEventListener("mousemove", function(details) {
+        // Get the dimensions of the title div
+        var titleRect = title.getBoundingClientRect();
+
+        // Calculate the vertical center of the title div
+        var centerY = titleRect.top + titleRect.height / 2;
+
+        // Calculate the difference between cursor position and center of the title div
+        var diffY = Math.abs(details.clientY - centerY);
+
+        // Define a vertical threshold for how close to the center the cursor needs to be
+        var verticalThreshold = titleRect.height / 2; // Adjust this value as needed
+
+        // Calculate the rotation angle based on the cursor's Y position
+        var rotationAngle = (details.clientY - centerY) / verticalThreshold * 20; // Clamp within -20 to 20 degrees
+
+        // Select the image inside the current title div
+        var img = title.querySelector('img');
+
+        // Check if the cursor is within the vertical threshold distance from the center
+        if (diffY < verticalThreshold) {
+            // Clamp the rotation angle to stay within a specific range
+            rotationAngle = Math.max(-20, Math.min(20, rotationAngle));
+
+            // Show the image, position it at the mouse location, and apply clamped rotation
+            img.style.display = 'block';
+            gsap.to(img, {
+                opacity: 1,
+                y:20,
+                ease:Expo.ease,
+                top: `${details.clientY - titleRect.top - img.offsetHeight / 2}px`,
+                left: `${details.clientX - titleRect.left - img.offsetWidth / 2}px`,
+                rotation: rotationAngle // Apply clamped rotation
+            });
+        } else {
+            // Hide the image if the cursor is not near the vertical center
+            gsap.to(img, {
+                opacity: 0,
+                rotation: 0, // Reset rotation
+                ease: "power1.out",
+                onComplete: function() {
+                    img.style.display = 'none';
+                }
+            });
+        }
+    });
+
+    // Hide the image when the mouse leaves the title div
+    title.addEventListener("mouseleave", function() {
+        var img = title.querySelector('img');
+        gsap.to(img, {
+            opacity: 0,
+            rotation: 0, // Reset rotation when hiding the image
+            ease: "power1.out",
+            onComplete: function() {
+                img.style.display = 'none';
+            }
+        });
+    });
+  });
+}
+work()
+
+function motive() {
+  
+// Select all the spans inside the h1
+const spans = document.querySelectorAll("#animation h1 span");
+// GSAP Timeline for Text Animation with Spans
+  var tl = gsap.timeline({repeat: -1, repeatDelay: 0.5}); // Loop infinitely with a short delay between loops
+
+  spans.forEach((span, index) => {
+    tl.fromTo(span, 
+      { y: 100, opacity: 0, display: 'none' }, // Start state
+      { 
+        y: 50, 
+        opacity: 1, 
+        duration: 0.5, 
+        ease: "elastic.out", 
+        display: 'inline-block',
+        onStart: function() { 
+          span.style.display = 'inline-block'; // Ensure the span is displayed when animation starts
+        }
+      })
+      .to(span, 
+        { 
+          y: -100, 
+          opacity: 0, 
+          duration: 0.5, 
+          ease: "elastic.in", 
+          delay: 2, // Visible for 2 seconds before disappearing
+          onComplete: function() {
+            span.style.display = 'none'; // Hide the span after animation ends
+          }
+        });
+  });
+
+
+}
+motive()
+
+
+// Refresh ScrollTrigger on window resize
+window.addEventListener('resize', () => {
+  ScrollTrigger.refresh();
+});
+
+var path = "M 10 150 Q 150 150 1100 150";
+var finalPath = "M 10 150 Q 150 150 1100 150";
+
+var string = document.querySelector("#string svg");
+
+string.addEventListener("mousemove", (mouseDetails) => {
+    let rect = string.getBoundingClientRect();
+    let mouseX = mouseDetails.clientX - rect.left;
+    let mouseY = mouseDetails.clientY - rect.top;
+
+    // Adjust the path control point to follow the cursor
+    path = `M 10 150 Q ${mouseX} ${mouseY} 1100 150`;
+    
+    gsap.to("#string svg path", {
+        attr: { d: path },
+        duration: 0.5,
+        ease: "power3.out"
+    });
+});
+string.addEventListener("mouseleave", () => {
+    gsap.to("#string svg path", {
+        attr: { d: finalPath },
+
+        duration:0.5,
+        ease: "elastic.Out",
+       
+        
+    });
+});
+
+
+  Shery.mouseFollower({
+    //Parameters are optional.
+    ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+    duration: 1,
+    
+    });
+    
+        Shery.makeMagnet("a,button", {
+            // duration: 1,
+        });
+        Shery.imageMasker(".title" /* Element to target.*/, {
+      //Parameters are optional.
+      mouseFollower: true,
+      
+      text:"View",
+      ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+      duration: 1,
+      // debug:true,
+    });
+  //   Shery.textAnimate(".home-content h1 span" /* Element to target.*/, {
+  //   //Parameters are optional.
+  //   style: 1,
+    
+  //  });
+
+//   Shery.imageEffect(".home-img", {
+//   style: 5, //Select Style
+  
+//   gooey:true,
+//   // debug:true,
+//   config:{"a":{"value":0.92,"range":[0,30]},"b":{"value":0.75,"range":[-1,1]},"zindex":{"value":-9996999,"range":[-9999999,9999999]},"aspect":{"value":2.165087956698241},"ignoreShapeAspect":{"value":true},"shapePosition":{"value":{"x":0,"y":0}},"shapeScale":{"value":{"x":0.5,"y":0.5}},"shapeEdgeSoftness":{"value":0,"range":[0,0.5]},"shapeRadius":{"value":0,"range":[0,2]},"currentScroll":{"value":0},"scrollLerp":{"value":0.07},"gooey":{"value":true},"infiniteGooey":{"value":true},"growSize":{"value":4,"range":[1,15]},"durationOut":{"value":1,"range":[0.1,5]},"durationIn":{"value":1.5,"range":[0.1,5]},"displaceAmount":{"value":0.5},"masker":{"value":false},"maskVal":{"value":1,"range":[1,5]},"scrollType":{"value":0},"geoVertex":{"range":[1,64],"value":1},"noEffectGooey":{"value":true},"onMouse":{"value":0},"noise_speed":{"value":0.2,"range":[0,10]},"metaball":{"value":0.2,"range":[0,2]},"discard_threshold":{"value":0.5,"range":[0,1]},"antialias_threshold":{"value":0,"range":[0,0.1]},"noise_height":{"value":0.5,"range":[0,2]},"noise_scale":{"value":10,"range":[0,100]}} ,
+// });
+console.log("workking scripts");
+</script>
+ 
+    </body>
+</html>
